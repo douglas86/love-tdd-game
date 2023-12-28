@@ -31,6 +31,13 @@ describe('game object contains correct keys', () => {
     test('turnNumber key exists', () => {
         expect('turnNumber' in game).toBe(true)
     })
+    test('expect data-listener to be true', () => {
+        newGame()
+        const elements = document.getElementsByClassName('circle')
+        for (let element of elements) {
+            expect(element.getAttribute('data-listener')).toEqual('true')
+        }
+    })
 });
 
 describe('newGame works correctly', () => {
